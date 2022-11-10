@@ -6,7 +6,7 @@
 /*   By: tdelgran <tdelgran@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 12:17:22 by tdelgran          #+#    #+#             */
-/*   Updated: 2022/11/10 16:17:45 by tdelgran         ###   ########.fr       */
+/*   Updated: 2022/11/10 17:42:07 by tdelgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,5 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memset(void *str, int c, size_t n);
 size_t	ft_strlen(const char *str);
 void	ft_bzero(void *s, size_t n);
+void    *ft_memmove(void *dest, const void *src, size_t n);
 #endif
