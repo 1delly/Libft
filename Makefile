@@ -6,11 +6,11 @@
 #    By: tdelgran <tdelgran@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/10 12:19:58 by tdelgran          #+#    #+#              #
-#    Updated: 2022/11/10 12:38:49 by tdelgran         ###   ########.fr        #
+#    Updated: 2022/11/10 15:54:42 by tdelgran         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = ft_memset.c ft_strlen.c ft_isprint.c ft_isdigit.c ft_isascii.c ft_isalpha.c ft_isalnum.c ft_bzero.c
+SRCS = ft_memset.c ft_strlen.c ft_isprint.c ft_isdigit.c ft_isascii.c ft_isalpha.c ft_isalnum.c ft_bzero.c ft_memcpy.c
 
 OBJS = $(SRCS:.c=.o)
 

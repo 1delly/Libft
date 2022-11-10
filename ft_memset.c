@@ -6,7 +6,7 @@
 /*   By: tdelgran <tdelgran@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 12:34:59 by tdelgran          #+#    #+#             */
-/*   Updated: 2022/11/10 12:34:51 by tdelgran         ###   ########.fr       */
+/*   Updated: 2022/11/10 16:20:39 by tdelgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memset(void *str, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		((unsigned char*)str)[i] = c;
+		((unsigned char *)str)[i] = c;
 		i++;
 	}
 	return (str);
