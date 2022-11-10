@@ -3,29 +3,31 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tdelgran <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: tdelgran <tdelgran@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/11/08 17:05:03 by tdelgran          #+#    #+#              #
-#    Updated: 2022/11/08 17:05:07 by tdelgran         ###   ########.fr        #
+#    Created: 2022/11/10 12:19:58 by tdelgran          #+#    #+#              #
+#    Updated: 2022/11/10 12:38:49 by tdelgran         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = ft_memset.c
+SRCS = ft_memset.c ft_strlen.c ft_isprint.c ft_isdigit.c ft_isascii.c ft_isalpha.c ft_isalnum.c ft_bzero.c
 
-OBJS = libft.a
-all : $(name)
+OBJS = $(SRCS:.c=.o)
+
+NAME = libft.a
+all : $(NAME)
 
 .c.o:
-		gcc -Wall -Wextra - Werror -c -I ./includes $< -o $(<:.c=.o)
+		gcc -Wall -Wextra -Werror -c -I ./includes $< -o $(<:.c=.o)
 
 $(NAME): $(OBJS)
-	ar cr $(NAME): $(OBJS)
+	ar cr $(NAME) $(OBJS)
 	ranlib $(NAME)
 
 clean:
 	rm -rf $(OBJS)
 
-fclean:
+fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all

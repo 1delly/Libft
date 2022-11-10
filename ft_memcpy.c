@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tdelgran <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tdelgran <tdelgran@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 16:07:35 by tdelgran          #+#    #+#             */
-/*   Updated: 2022/11/07 16:07:37 by tdelgran         ###   ########.fr       */
+/*   Created: 2022/11/10 11:34:45 by tdelgran          #+#    #+#             */
+/*   Updated: 2022/11/10 12:35:32 by tdelgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
-{
-	if (c >= 32 && c <= 126)
-		return (1);
-	else
-		return (0);
-	return (0);
-}
-/*
-#include <stdio.h>
+#include "libft.h"
 
-int main()
+void    ft_memcpy(void *dest, const void *src, size_t n)
 {
-	 printf ("%d", ft_isprint('a'));
+    int i;
+
+    i = 0;
+    while (i < n)
+    {
+        
+    }
+
 }
-*/

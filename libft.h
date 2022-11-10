@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tdelgran <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tdelgran <tdelgran@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 17:06:39 by tdelgran          #+#    #+#             */
-/*   Updated: 2022/11/07 17:06:41 by tdelgran         ###   ########.fr       */
+/*   Created: 2022/11/10 12:17:22 by tdelgran          #+#    #+#             */
+/*   Updated: 2022/11/10 12:37:12 by tdelgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT.H
-#define LIBFT.H
+#ifndef LIBFT_H
+# define LIBFT_H
+# include <string.h>
+# include <stdlib.h>
+# include <unistd.h>
 
-typedef unsigned long size_t
-
+int	    ft_isalnum(int c);
+int	    ft_isalpha(int c);
+int	    ft_isascii(int c);
+int	    ft_isdigit(int c);
+int	    ft_isprint(int c);
+void    ft_memcpy(void *dest, const void *src, size_t n);
+void	*ft_memset(void *str, int c, size_t n);
+int	    ft_strlen(char *str);
+void    ft_bzero(void *s, size_t n);
 #endif
