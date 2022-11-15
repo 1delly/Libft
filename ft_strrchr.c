@@ -6,7 +6,7 @@
 /*   By: tdelgran <tdelgran@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 13:02:51 by theodelgran       #+#    #+#             */
-/*   Updated: 2022/11/15 17:36:13 by tdelgran         ###   ########.fr       */
+/*   Updated: 2022/11/15 18:07:50 by tdelgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,12 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	i;
+	int	i;
 
-	i = c;
-	if (*s == i)
-	{
-		while (*s)
-			return ((char *)s);
-		s++;
-	}
-	while (*s)
-	{
-		if (*s == '\0')
-			return ((char *)s);
-		s++;
-	}
+	i = ft_strlen(s);
+	while (i > 0 && s[i] != (char)c)
+		i--;
+	if (s[i] == (char)c)
+		return ((char *)s + i);
 	return (0);
 }
