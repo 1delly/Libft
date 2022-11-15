@@ -3,27 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: theodelgrange <theodelgrange@student.42    +#+  +:+       +#+        */
+/*   By: tdelgran <tdelgran@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 13:02:51 by theodelgran       #+#    #+#             */
-/*   Updated: 2022/11/15 13:16:42 by theodelgran      ###   ########.fr       */
+/*   Updated: 2022/11/15 17:36:13 by tdelgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int i;
+	char	i;
 
-	i = 0;
-	while (s[i])
-		i++;
-	while (i >= 0)
+	i = c;
+	if (*s == i)
 	{
-		if (s[i] == c)
-			return ((char*)s++);
-		i--;
+		while (*s)
+			return ((char *)s);
+		s++;
+	}
+	while (*s)
+	{
+		if (*s == '\0')
+			return ((char *)s);
+		s++;
 	}
 	return (0);
 }
