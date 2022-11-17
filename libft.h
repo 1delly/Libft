@@ -6,7 +6,7 @@
 /*   By: tdelgran <tdelgran@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 12:17:22 by tdelgran          #+#    #+#             */
-/*   Updated: 2022/11/16 17:40:43 by tdelgran         ###   ########.fr       */
+/*   Updated: 2022/11/17 18:10:25 by tdelgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,8 @@ int     ft_memcmp(const void *s1, const void *s2, size_t n);
 char    *ft_strnstr(const char *haystack, const char *needle, size_t n);
 int     ft_atoi(const char *str);
 char    *ft_strdup(const char *s1);
+void    ft_putchar_fd(char c, int fd);
+void    ft_putstr_fd(char *s, int fd);
+void    ft_putendl_fd(char *s, int fd);
+void    ft_putnbr_fd(int n, int fd);
 #endif

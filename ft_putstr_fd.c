@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdelgran <tdelgran@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 15:17:19 by theodelgran       #+#    #+#             */
-/*   Updated: 2022/11/17 15:57:35 by tdelgran         ###   ########.fr       */
+/*   Created: 2022/11/17 16:56:11 by tdelgran          #+#    #+#             */
+/*   Updated: 2022/11/17 17:20:15 by tdelgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
-{
-	int	i;
-	int	a;
-	int	result;
+#include "libft.h"
 
-	i = 0;
-	a = 1;
-	result = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32))
-		i++;
-	if (str[i] == '-')
-		a = -1;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
+void	ft_putstr_fd(char *s, int fd)
+{
+	if (!s)
+		return ;
+	while (*s)
 	{
-		result = ((10 * result) + (str[i] - 48));
-		i++;
+		write(fd, &*s, 1);
+		s++;
 	}
-	return (result * a);
 }
