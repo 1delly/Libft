@@ -6,7 +6,7 @@
 /*   By: tdelgran <tdelgran@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 12:17:22 by tdelgran          #+#    #+#             */
-/*   Updated: 2022/11/20 22:15:24 by tdelgran         ###   ########.fr       */
+/*   Updated: 2022/11/21 00:28:04 by tdelgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,6 @@ void    ft_putendl_fd(char *s, int fd);
 void    ft_putnbr_fd(int n, int fd);
 void    *ft_calloc(size_t a, size_t b);
 size_t	ft_strlcat(char *dest, const char *src, size_t n);
+char	*ft_strjoin(char const *s1, char const *s2);
+char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 #endif
