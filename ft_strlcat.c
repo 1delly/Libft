@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdelgran <tdelgran@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 17:35:40 by tdelgran          #+#    #+#             */
-/*   Updated: 2022/11/18 15:01:39 by tdelgran         ###   ########.fr       */
+/*   Created: 2022/11/20 21:47:07 by tdelgran          #+#    #+#             */
+/*   Updated: 2022/11/20 22:16:11 by tdelgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int nb, int fd)
+size_t	ft_strlcat(char *dest, const char *src, size_t n)
 {
-	if (nb == -2147483648)
+	unsigned int	i;
+	unsigned int	a;
+
+	i = 0;
+	a = 0;
+	if ((!dest || !src) && (!n))
+		return (0);
+	while (dest[a] && a < n)
+		a++;
+	while (src[i] && n && a + i < n - 1)
 	{
-		ft_putstr_fd("-2147483648", fd);
+		dest[a + i] = (char)src[i];
+		i++;
 	}
-	else if (nb >= 0 && nb <= 9)
-	{
-		ft_putchar_fd(nb + '0', fd);
-	}
-	else if (nb < 0)
-	{
-		ft_putchar_fd('-', fd);
-		ft_putnbr_fd(nb * (-1), fd);
-	}
-	else
-	{
-		ft_putnbr_fd(nb / 10, fd);
-		ft_putnbr_fd(nb % 10, fd);
-	}
+	if (a < n)
+		dest[a + i] = 0;
+	while (src[i])
+		i++;
+	return (a + i);
 }

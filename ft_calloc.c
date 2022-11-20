@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdelgran <tdelgran@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 17:35:40 by tdelgran          #+#    #+#             */
-/*   Updated: 2022/11/18 15:01:39 by tdelgran         ###   ########.fr       */
+/*   Created: 2022/11/18 15:50:21 by tdelgran          #+#    #+#             */
+/*   Updated: 2022/11/18 16:03:13 by tdelgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int nb, int fd)
+void	*ft_calloc(size_t a, size_t b)
 {
-	if (nb == -2147483648)
-	{
-		ft_putstr_fd("-2147483648", fd);
-	}
-	else if (nb >= 0 && nb <= 9)
-	{
-		ft_putchar_fd(nb + '0', fd);
-	}
-	else if (nb < 0)
-	{
-		ft_putchar_fd('-', fd);
-		ft_putnbr_fd(nb * (-1), fd);
-	}
-	else
-	{
-		ft_putnbr_fd(nb / 10, fd);
-		ft_putnbr_fd(nb % 10, fd);
-	}
+	size_t	*titi;
+
+	if (a == SIZE_MAX || b == SIZE_MAX)
+		return (0);
+	titi = malloc(a * b);
+	if (!titi)
+		return (0);
+	ft_bzero(titi, (a * b));
+	return (titi);
 }
