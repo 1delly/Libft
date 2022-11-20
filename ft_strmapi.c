@@ -6,7 +6,7 @@
 /*   By: tdelgran <tdelgran@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 00:19:49 by tdelgran          #+#    #+#             */
-/*   Updated: 2022/11/21 00:35:55 by tdelgran         ###   ########.fr       */
+/*   Updated: 2022/11/21 00:43:34 by tdelgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,19 @@ char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
     size_t  i;
     size_t  n;
-    char    *a;
+    char    *str;
     
     if (!s || !f)
         return (0);
-    i = -1;
+    i = 0;
     n = ft_strlen(s);
-    if (!(a = (char *)malloc(n + 1)))
+    if (!(str = (char *)malloc(sizeof(char) * (n + 1))))
         return (0);
-    while (++i < n)
-        a[i] = f(i, s[i]);
-    a[i] = '\0';
-    return (a);
+    while (i < n)
+    {
+        str[i] = f(i, s[i]);
+        i++;
+    }
+    str[i] = '\0';
+    return (str);
 }
