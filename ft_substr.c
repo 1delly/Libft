@@ -6,7 +6,7 @@
 /*   By: tdelgran <tdelgran@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 18:16:18 by tdelgran          #+#    #+#             */
-/*   Updated: 2022/11/23 14:46:29 by tdelgran         ###   ########.fr       */
+/*   Updated: 2022/11/28 16:15:11 by tdelgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
     
     if (!s || !start)
         return (0);
-    if (start >= ft_strlen(s))
-        return (0);
-    dest = 0;
+    if (start >= ft_strlen((char *)s))
+        return (ft_strdup(""));
     i = 0;
+    i = ft_strlen(s + start) + 1;
     dest = malloc(sizeof(char *) * (sizemec(s, start, len) + 1));
     while (s[i])
     {
