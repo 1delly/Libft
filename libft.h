@@ -6,7 +6,7 @@
 /*   By: tdelgran <tdelgran@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 12:17:22 by tdelgran          #+#    #+#             */
-/*   Updated: 2022/12/03 18:08:43 by tdelgran         ###   ########.fr       */
+/*   Updated: 2022/12/05 11:35:11 by tdelgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,5 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_itoa(int n);
+char    **ft_split(char const *s, char c);
 #endif

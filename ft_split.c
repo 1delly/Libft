@@ -6,24 +6,67 @@
 /*   By: tdelgran <tdelgran@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 18:58:59 by tdelgran          #+#    #+#             */
-/*   Updated: 2022/12/03 19:25:33 by tdelgran         ###   ########.fr       */
+/*   Updated: 2022/12/05 11:57:51 by tdelgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count(char *s)
+static int	ft_count(const char *str, char sep)
 {
-	int	i;
+	int	count;
+	int	index;
 	
-	if (!s)
-		return (0);
-		i = 0;
-	if (ft_isalpha(*s))
-		i++;
-	while (*s)
-		s++;
-	return (i);
+	count = 0;
+	index = 0;
+	while (str[index] && str[index] == sep)
+		index++;
+	while (str[index])
+	{
+		count++;
+		while (str[index] && str[index] != sep)
+			index++;
+		while (str[index] && str[index] == sep)
+			index++;
+	}
+	return (count);
 }
 
+/*s = "       3ello world    ! " c = ' '
+"3ello" str[index] -> 5 caracteres i = 5 str[0] = malloc(i * sizeof(char));
+"world"
+"!"*/
+
 char	**ft_split(char const *s, char c)
+{
+	char	**strings;
+	int		count;
+	int		len;
+	int		ichar;
+	int		itab;
+	
+	strings = 0;
+	count = ft_count(s, c);
+	*strings = malloc((count + 1) * sizeof(char *));
+	if (!strings)
+		return (0);
+	ichar = 0;
+	itab = 0;
+	while (s[ichar] && s[ichar] == c)
+		ichar++;
+	while (s[ichar])
+	{
+		len = 0;
+		while (s[ichar] != c)
+		{
+			len++;
+			ichar++;
+		}
+		strings[itab] = malloc((len + 1) * sizeof(char));
+		if (!*strings)
+			return (0);
+		while (s[ichar] == c)
+			ichar++;
+	}
+	return (strings);
+}
